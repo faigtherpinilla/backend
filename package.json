@@ -4,7 +4,8 @@
   "description": "tiendaOnline",
   "main": "index.js",
   "scripts": {
-    "test": "none"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "author": "nosotros",
   "license": "ISC",
