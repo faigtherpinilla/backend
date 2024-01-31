@@ -1,0 +1,8 @@
+hello world
+git checkout es pra cambia de rama
+ y git checkout -b , se crea y se cambia de rama
+
+ name = project
+ sumar = 1 + 1
+ holaaaa
+ 
