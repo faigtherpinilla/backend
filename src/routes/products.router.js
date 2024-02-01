@@ -29,10 +29,10 @@ router.post('/create', (req, res) => {
     'finalArray': misProductos})
 })
 
-router.get ("/ID", (req, res) =>{
-    const Id =req.body 
-    res.json ({'Id': misProductos})
-} 
-)
+router.get ("/:productoId", (req, res) => {
+    const productoId = req.params.productoId
+    console.log(productoId)
+    res.json(misProductos.find(misProductos => misProductos.Id === productoId));
+})
 
 module.exports = router
