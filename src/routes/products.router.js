@@ -1,14 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
+
 let misProductos = [
-    {'nombre': 'camisa',
+    {'Id': '1',
+    'nombre': 'camisa',
     'precio': 1000,
     'color': 'negro'},
-    {'nombre': 'camisa ovesize',
+    {'Id':'2',
+    'nombre': 'camisa ovesize',
     'precio': 1400,
     'color': 'blanco'},
-    {'nombre': 'pantalon',
+    {'Id':'3',
+    'nombre': 'pantalon',
     'precio': 2590,
     'color': 'beige'},]
 
@@ -24,5 +28,11 @@ router.post('/create', (req, res) => {
     'Object': nuevoProducto,
     'finalArray': misProductos})
 })
+
+router.get ("/ID", (req, res) =>{
+    const Id =req.body 
+    res.json ({'Id': misProductos})
+} 
+)
 
 module.exports = router
