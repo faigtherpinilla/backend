@@ -29,10 +29,11 @@ router.post('/create', (req, res) => {
     'finalArray': misProductos})
 })
 
-router.get ("/:productoId", (req, res) => {
+router.get("/:productoId", (req, res) => {
     const productoId = req.params.productoId
     const productos = buscarProductoPorId(productoId)   
-      console.log(productoId)
+      //console.log(productoId)
+      console.log(buscarProductoPorId)
     if (productos){
      res.json(productos)
      console.log(productos)
@@ -42,8 +43,6 @@ router.get ("/:productoId", (req, res) => {
          }
 });
  const buscarProductoPorId = (productoId) => {
-    misProductos.find(producto => producto.Id === productoId)
+   return misProductos.find(productos => productos.Id === productoId)
    };
-
-
 module.exports = router
