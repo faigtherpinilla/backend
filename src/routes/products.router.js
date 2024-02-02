@@ -1,14 +1,18 @@
 const express = require('express')
 const router = express.Router()
 
+
 let misProductos = [
-    {'nombre': 'camisa',
+    {'Id': '1',
+    'nombre': 'camisa',
     'precio': 1000,
     'color': 'negro'},
-    {'nombre': 'camisa ovesize',
+    {'Id':'2',
+    'nombre': 'camisa ovesize',
     'precio': 1400,
     'color': 'blanco'},
-    {'nombre': 'pantalon',
+    {'Id':'3',
+    'nombre': 'pantalon',
     'precio': 2590,
     'color': 'beige'},]
 
@@ -25,4 +29,18 @@ router.post('/create', (req, res) => {
     'finalArray': misProductos})
 })
 
+router.get("/:productoId", (req, res) => {
+    const productoId = req.params.productoId
+    const producto = buscarProductoPorId(productoId)   
+      
+    if (producto){
+    res.json(producto)
+    }
+    else {
+     res.status(404).json({'error': 'Producto no encontrado'});
+    }
+});
+ const buscarProductoPorId = (productoId) => {
+   return misProductos.find(producto => producto.Id === productoId)
+   };
 module.exports = router
