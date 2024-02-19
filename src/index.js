@@ -8,7 +8,6 @@ app.use(express.json())
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
-
 //pp.get('/saludogio', (req, res) => {
 //   const nombre= req.body.nombre
 //   res.send("hola "+ nombre)
