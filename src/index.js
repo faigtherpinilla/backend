@@ -9,11 +9,6 @@ app.get('/', (req, res) => {
     res.send('Hello world!')
 })
 
-app.get("/saludo/:nombre", (req , res) =>{
-    const nombre = req.params.nombre
-    res.send("su nombre es: " + nombre)
-})
-
 app.listen(port, () => {
     console.log("My port: " + port)
 })
